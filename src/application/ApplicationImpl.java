@@ -1,11 +1,11 @@
-package app;
+package application;
 
 import CountryInfoService.CountryInfoService;
 import CountryInfoService.CountryInfoServiceSoapType;
 import GeoIpService.GeoIPService;
 import GeoIpService.GeoIPServiceSoap;
 
-public class AppImpl implements App {
+public class ApplicationImpl implements Application {
 
 	@Override
 	public String getCapitalFromCountryIP(String ip) {
@@ -17,5 +17,14 @@ public class AppImpl implements App {
 		
 		return capital;
 	}
-
+	
+	@Override
+	public String getCountryNameFromIP(String ip) {
+		GeoIPServiceSoap geoIP = ( new GeoIPService()).getGeoIPServiceSoap();
+		String countryName = geoIP.getGeoIP(ip).getCountryName();
+		
+		return countryName;
+	}
+	
+	
 }
