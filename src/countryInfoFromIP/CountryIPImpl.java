@@ -1,11 +1,11 @@
-package application;
+package countryInfoFromIP;
 
 import CountryInfoService.CountryInfoService;
 import CountryInfoService.CountryInfoServiceSoapType;
 import GeoIpService.GeoIPService;
 import GeoIpService.GeoIPServiceSoap;
 
-public class ApplicationImpl implements Application {
+public class CountryIPImpl implements CountryIP {
 
 	@Override
 	public String getCapitalFromCountryIP(String ip) {
@@ -26,5 +26,14 @@ public class ApplicationImpl implements Application {
 		return countryName;
 	}
 	
-	
+	@Override
+	public String getLinkToAFlagFromIP(String ip) {
+		GeoIPServiceSoap geoIP = ( new GeoIPService()).getGeoIPServiceSoap();
+		CountryInfoServiceSoapType countryInfo = ( new CountryInfoService()).getCountryInfoServiceSoap();
+		
+		String codigo = geoIP.getGeoIP(ip).getCountryCode();
+		String linkToFlag = countryInfo.countryFlag(codigo);
+		
+		return linkToFlag;
+	}
 }
