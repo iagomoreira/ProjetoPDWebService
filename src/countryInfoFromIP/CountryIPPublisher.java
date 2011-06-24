@@ -7,6 +7,6 @@ public class CountryIPPublisher {
 	      // 1st argument is the publication URL
 	      // 2nd argument is an SIB instance
 	      Endpoint.publish("http://127.0.0.1:9876/ServiceSoapCountryIP", new CountryIPImpl());
-//	      Endpoint.publish("http://127.0.0.1:10000/ServiceRestCountryIP", new CountryIPImpl());
+	      Endpoint.publish("http://127.0.0.1:10000/ServiceRestCountryIP", new RESTCountryIP());
 	    }
 }

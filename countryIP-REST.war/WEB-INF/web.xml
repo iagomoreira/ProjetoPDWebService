@@ -2,7 +2,7 @@
 <web-app>
 	<servlet>
 		<servlet-name>CountryIPImplREST</servlet-name>
-		<servlet-class>countryInfoFromIP.CountryIPRest</servlet-class>
+		<servlet-class>countryInfoFromIP.RESTCountryIP</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CountryIPImplREST</servlet-name>

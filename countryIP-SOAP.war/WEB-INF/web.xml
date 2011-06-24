@@ -7,4 +7,25 @@
 		<servlet-name>CountryIPImpl</servlet-name>
 		<url-pattern>/countryIP</url-pattern>
 	</servlet-mapping>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>CountryIP SOAP</web-resource-name>
+			<url-pattern>/countryIP</url-pattern>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		
+		<auth-constraint> 
+			<role-name>master</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>JBossWS</realm-name>
+	</login-config>
+	
+	<security-role>
+		<role-name>master</role-name>
+	</security-role>
 </web-app>
