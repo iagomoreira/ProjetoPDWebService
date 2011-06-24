@@ -1,0 +1,10 @@
+<web-app>
+	<servlet>
+		<servlet-name>CountryIPImpl</servlet-name>
+		<servlet-class>countryInfoFromIP.CountryIPImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CountryIPImpl</servlet-name>
+		<url-pattern>/countryIP</url-pattern>
+	</servlet-mapping>
+</web-app>

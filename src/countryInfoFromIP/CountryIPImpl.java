@@ -1,10 +1,13 @@
 package countryInfoFromIP;
 
+import javax.jws.WebService;
+
 import CountryInfoService.CountryInfoService;
 import CountryInfoService.CountryInfoServiceSoapType;
 import GeoIpService.GeoIPService;
 import GeoIpService.GeoIPServiceSoap;
 
+@WebService(endpointInterface = "countryInfoFromIP.CountryIP")
 public class CountryIPImpl implements CountryIP {
 
 	@Override
