@@ -1,0 +1,32 @@
+
+<web-app>
+	<servlet>
+		<servlet-name>CountryIPImplREST</servlet-name>
+		<servlet-class>countryInfoFromIP.CountryIPRest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CountryIPImplREST</servlet-name>
+		<url-pattern>/restCountryIP</url-pattern>
+	</servlet-mapping>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>CountryIPImpl Rest</web-resource-name>
+			<url-pattern>/restCountryIP</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		
+		<auth-constraint>
+			<role-name>master</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>JBossWS</realm-name>
+	</login-config>
+	
+	<security-role>
+		<role-name>master</role-name>
+	</security-role>
+</web-app>
