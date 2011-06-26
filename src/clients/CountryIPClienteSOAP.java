@@ -14,7 +14,7 @@ public class CountryIPClienteSOAP {
 		
 		Authenticator.setDefault(new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("kermit","thefrog".toCharArray());
+                return new PasswordAuthentication("iago","senha1".toCharArray());
             }
         });
 		
