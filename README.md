@@ -16,3 +16,7 @@ Para testar o webservice que está nas nuvens no Google app engine deve-se ir em
 No diretório war estão todos os arquivos de configuração para o GAE
 
 E nos diretórios countryIP-REST.war e countryIP-SOAP.war estão a estrutura de diretórios e arquivos para o jboss.
+
+## ToDo
+
+Fazer uma página jsp para que se possa passar o ip por meio de um formulário.
