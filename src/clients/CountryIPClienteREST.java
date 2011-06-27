@@ -18,7 +18,7 @@ public class CountryIPClienteREST {
 		
 		Authenticator.setDefault(new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("iago","testando".toCharArray());
+                return new PasswordAuthentication("iago","senha1".toCharArray());
             }
         });
 		
