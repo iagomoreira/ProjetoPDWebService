@@ -42,15 +42,9 @@ public class RESTCountryIP implements Provider<Source>{
 	
 	private Source doGet( MessageContext msg_ctx ){
 		String query_string = ( String ) msg_ctx.get(MessageContext.QUERY_STRING);
-		String[] particaoQString = query_string.split("=");
 		String parametro;
 		
-		if( particaoQString[0].toLowerCase() != "ip"){
-			throw new HTTPException(400);
-		}
-		else{
-			parametro = particaoQString[1].trim();
-		}
+		parametro = get_name_from_qs("ip", query_string);
 		
 		ByteArrayInputStream inputStream = encode_to_stream(countryIP.getCapitalFromCountryIP(parametro));
 		
@@ -65,6 +59,16 @@ public class RESTCountryIP implements Provider<Source>{
 		xmlEnc.close();
 		
 		return new ByteArrayInputStream(outStream.toByteArray());
+	}
+	
+	private String get_name_from_qs(String key, String qs ){
+		String[] partsOfQS = qs.split("=");
+		
+		if( !partsOfQS[0].equalsIgnoreCase(key)){
+			throw new HTTPException(400);
+		}
+		
+		return partsOfQS[1].trim();
 	}
 
 }
